@@ -54,6 +54,12 @@ span {
 p {
   margin-bottom: 2rem;
 }
+a {
+  color: black;
+}
+a:hover {
+  color: #f26d7d;
+}
 img {
   margin-bottom: 2rem;
 }
@@ -256,9 +262,6 @@ nav .nav-link:hover h3 {
   .contact .contact-info .info-statement {
     margin-bottom: 5rem;
   }
-}
-.contact .contact-info .info-statement a {
-  color: black;
 }
 .footer {
   padding: 5rem 2.5rem;

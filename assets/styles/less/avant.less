@@ -77,10 +77,17 @@ p {
   margin-bottom: @small-space*2;
 }
 
+a {
+  color: @text-color;
+
+  &:hover {
+    color: @secondary-color;
+  }
+}
+
 img {
   margin-bottom: @small-space*2;
 }
-
 
 nav {
   position: fixed !important;
@@ -337,10 +344,6 @@ nav {
 
       @media screen and (max-width: @xs-devices-max) {
         margin-bottom: @standard-space;
-      }
-
-      a {
-        color: @text-color;
       }
     }
   }
