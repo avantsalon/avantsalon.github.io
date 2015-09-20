@@ -1,7 +1,8 @@
 avant = {
     init: function () {
         $(document).ready(function () {
-            avant._initNavigationBar();
+            avant._initNavigationLinks();
+            avant._initNavigationBarCollapse();
             avant._initServiceHeights();
             google.maps.event.addDomListener(window, 'load', avant._initGoogleMap);
         });
@@ -28,7 +29,7 @@ avant = {
         });
     },
 
-    _initNavigationBar: function () {
+    _initNavigationBarCollapse: function () {
         var EXPANDED_CLASS = 'expanded';
         var WAIT_TIMER = 280;
 
@@ -38,13 +39,40 @@ avant = {
         navbarToggleButton.click(function () {
             // allow time for menu to slide up
             if (navbarHeader.hasClass(EXPANDED_CLASS)) {
-                setTimeout(function () {
-                    navbarHeader.removeClass(EXPANDED_CLASS);
-                }, WAIT_TIMER)
+
             }
             else {
                 navbarHeader.addClass(EXPANDED_CLASS);
             }
+        });
+    },
+
+    _initNavigationLinks: function () {
+        var scrollToElement = function(element, duration) {
+            $('html, body').animate({
+                scrollTop: element.offset().top - 75
+            }, duration);
+        };
+
+        var navLinks = $('.nav-link');
+
+        $.each(navLinks, function( index, navLink ) {
+            var EXPANDED_CLASS = 'expanded';
+            var WAIT_TIMER = 280;
+
+            navLink = $(navLink);
+            var navbarHeader = $('nav .navbar-header');
+            var scrollToSelector = navLink.attr('scrollTo');
+            var scrollToEl = $(scrollToSelector);
+
+
+            navLink.unbind().click(function(){
+                $('.navbar-collapse').collapse('hide');
+                setTimeout(function () {
+                    navbarHeader.removeClass(EXPANDED_CLASS);
+                }, WAIT_TIMER)
+                scrollToElement(scrollToEl, 500);
+            });
         });
     },
 
