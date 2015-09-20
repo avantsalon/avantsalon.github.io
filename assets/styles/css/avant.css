@@ -127,8 +127,8 @@ nav .nav-link:hover h3 {
 }
 .introduction .hero-logo {
   z-index: 2;
-  margin-top: 15rem;
-  margin-bottom: 8rem;
+  margin-top: 20rem;
+  margin-bottom: 10rem;
 }
 @media screen and (max-width: 767px) {
   .introduction .hero-logo {
