@@ -3,6 +3,7 @@ avant = {
         $(document).ready(function () {
             avant._initNavigationLinks();
             avant._initNavigationBarCollapse();
+            avant._initHoursOfOperation();
             avant._initServiceHeights();
             google.maps.event.addDomListener(window, 'load', avant._initGoogleMap);
         });
@@ -77,6 +78,25 @@ avant = {
                 scrollToElement(scrollToEl, 500);
             });
         });
+    },
+
+    _initHoursOfOperation: function() {
+        var openHoursEl = $('.current-hours-open');
+        var hoursOpen = [
+            'closed',
+            'closed',
+            'open from 9am to 9pm',
+            'open from 9am to 9pm',
+            'open from 9am to 9pm',
+            'open from 9am to 9pm',
+            'open from 9am to 9pm'
+        ];
+
+        var dateTime = new Date();
+        var currentDayOfWeek = dateTime.getDay();
+        var currentHoursOpen = hoursOpen[currentDayOfWeek];
+
+        openHoursEl.html(currentHoursOpen);
     },
 
     _initServiceHeights: function () {
