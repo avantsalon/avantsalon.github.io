@@ -1,0 +1,15 @@
+{
+  "name": "AVANT",
+  "version": "1.0.0",
+  "dependencies": {},
+  "license": "MIT",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "less-plugin-autoprefix": "^1.5.0"
+  }
+}
