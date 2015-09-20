@@ -39,7 +39,9 @@ avant = {
         navbarToggleButton.click(function () {
             // allow time for menu to slide up
             if (navbarHeader.hasClass(EXPANDED_CLASS)) {
-
+                setTimeout(function () {
+                    navbarHeader.removeClass(EXPANDED_CLASS);
+                }, WAIT_TIMER)
             }
             else {
                 navbarHeader.addClass(EXPANDED_CLASS);
@@ -62,15 +64,16 @@ avant = {
 
             navLink = $(navLink);
             var navbarHeader = $('nav .navbar-header');
+            var navbarCollapse = $('.navbar-collapse');
             var scrollToSelector = navLink.attr('scrollTo');
             var scrollToEl = $(scrollToSelector);
 
-
             navLink.unbind().click(function(){
-                $('.navbar-collapse').collapse('hide');
+                navbarCollapse.collapse('hide');
                 setTimeout(function () {
                     navbarHeader.removeClass(EXPANDED_CLASS);
                 }, WAIT_TIMER)
+
                 scrollToElement(scrollToEl, 500);
             });
         });
