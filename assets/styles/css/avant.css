@@ -1,3 +1,23 @@
+@-webkit-keyframes push-img {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+}
+@keyframes push-img {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+}
 .page-wrapper {
   overflow: hidden;
 }
@@ -92,11 +112,57 @@ nav .nav-link:hover h3 {
   position: relative;
   top: -1em;
   z-index: -1;
-  padding: 15.5em 0 0;
   background-color: #f5f5f5;
 }
 .introduction .hero-logo {
-  margin-bottom: 10em;
+  z-index: 2;
+  margin-top: 15em;
+  margin-bottom: 8em;
+}
+.introduction #hero-carousel {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s ease-in-out;
+  opacity: 0.25;
+}
+.introduction #hero-carousel .bg-image {
+  transition: opacity 3s ease, visibility 3s;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 150%;
+}
+.introduction #hero-carousel .bg-image:only-child {
+  -webkit-animation-direction: alternate !important;
+          animation-direction: alternate !important;
+}
+.introduction #hero-carousel .bg-image.visible {
+  -webkit-animation: push-img 45s linear infinite;
+          animation: push-img 45s linear infinite;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+@media screen and (max-width: 1280px) {
+  .introduction #hero-carousel .bg-image.visible {
+    -webkit-animation: push-img 29.25s linear infinite;
+            animation: push-img 29.25s linear infinite;
+  }
+}
+@media screen and (max-width: 736px) {
+  .introduction #hero-carousel .bg-image.visible {
+    -webkit-animation: push-img 18s linear infinite;
+            animation: push-img 18s linear infinite;
+  }
+}
+.introduction #hero-carousel .bg-image.top {
+  z-index: 2;
 }
 .biz-info {
   position: relative;
@@ -190,6 +256,9 @@ nav .nav-link:hover h3 {
   .contact .contact-info .info-statement {
     margin-bottom: 5rem;
   }
+}
+.contact .contact-info .info-statement a {
+  color: black;
 }
 .footer {
   padding: 5rem 2.5rem;
