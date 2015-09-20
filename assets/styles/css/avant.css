@@ -182,6 +182,9 @@ nav .nav-link:hover h3 {
 .biz-info .info-snip:last-child {
   border-right: none;
 }
+.biz-info .info-snip a:hover {
+  color: #E85858;
+}
 .biz-info .info-snip .glyphicon {
   margin-right: .2em;
   color: #E85858;
