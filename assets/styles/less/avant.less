@@ -81,6 +81,10 @@ p {
 a {
   &:hover {
     color: @secondary-color !important;
+
+    span {
+      color: @secondary-color !important;
+    }
   }
 }
 
@@ -175,8 +179,8 @@ nav {
   .hero-logo {
     z-index: 2;
 
-    margin-top: 20rem;
-    margin-bottom: 10rem;
+    margin-top: 25rem;
+    margin-bottom: 15rem;
 
     @media screen and (max-width: @xs-devices-max) {
       margin-top: 11rem;
@@ -304,6 +308,10 @@ nav {
 
     h2 {
       .content-spacer;
+    }
+
+    p {
+      font-size: 2rem !important;
     }
   }
 

@@ -59,6 +59,9 @@ p {
 a:hover {
   color: #f26d7d !important;
 }
+a:hover span {
+  color: #f26d7d !important;
+}
 img {
   margin-bottom: 2rem;
 }
@@ -127,8 +130,8 @@ nav .nav-link:hover h3 {
 }
 .introduction .hero-logo {
   z-index: 2;
-  margin-top: 20rem;
-  margin-bottom: 10rem;
+  margin-top: 25rem;
+  margin-bottom: 15rem;
 }
 @media screen and (max-width: 767px) {
   .introduction .hero-logo {
@@ -234,6 +237,9 @@ nav .nav-link:hover h3 {
 }
 .our-story .story-text h2 {
   margin-bottom: 1rem;
+}
+.our-story .story-text p {
+  font-size: 2rem !important;
 }
 .services {
   padding: 5rem 2.5rem;
